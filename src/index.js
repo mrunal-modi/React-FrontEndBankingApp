@@ -1,15 +1,15 @@
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route, Link, HashRouter} from "react-router-dom";
-import UserContext from "./routes/context";
+import UserContext from "./context";
 
 import NavBar from "./navbar";
-import Home from "./routes/home";
-import CreateAccount from "./routes/createaccount";
-import Login from "./routes/login";
-import Deposit from "./routes/deposit";
-import Withdraw from "./routes/withdraw";
-import Balance from "./routes/balance";
-import AllData from "./routes/alldata";
+import Home from "./home";
+import CreateAccount from "./createaccount";
+import Login from "./login";
+import Deposit from "./deposit";
+import Withdraw from "./withdraw";
+import Balance from "./balance";
+import AllData from "./alldata";
 
 const container = document.getElementById("root");
 const root = createRoot(container);
