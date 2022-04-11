@@ -1,38 +1,19 @@
+import React from "react";
+// import ReactDOM from 'react-dom';
 import { createRoot } from "react-dom/client";
-import { BrowserRouter, Routes, Route, Link, HashRouter} from "react-router-dom";
-import UserContext from "./context";
-
-import NavBar from "./navbar";
-import Home from "./home";
-import CreateAccount from "./createaccount";
-import Login from "./login";
-import Deposit from "./deposit";
-import Withdraw from "./withdraw";
-import Balance from "./balance";
-import AllData from "./alldata";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 
 const container = document.getElementById("root");
 const root = createRoot(container);
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
 
-function Spa() {
-  return (
-    <HashRouter>
-      <NavBar/>
-      <UserContext.Provider value={{users:[{name:'abel',email:'abel@mit.edu',password:'secret',balance:100}]}}>
-        <div className="container" style={{padding: "20px"}}>
-          <Routes>
-          <Route path="/" exact component={Home} />
-          <Route path="/CreateAccount/" component={CreateAccount} />
-          <Route path="/login/" component={Login} />
-          <Route path="/deposit/" component={Deposit} />
-          <Route path="/withdraw/" component={Withdraw} />
-          <Route path="/balance/" component={Balance} />
-          <Route path="/alldata/" component={AllData} />
-          </Routes>
-        </div>
-      </UserContext.Provider>      
-    </HashRouter>
-  );
-}
-
-root.render(<Spa tab="home"/>);
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
