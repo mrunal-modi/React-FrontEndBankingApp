@@ -1,4 +1,4 @@
-import UserContext from "./utils/userContect";
+import UserContext from "./utils/userContext";
 
 import { BrowserRouter, Route } from "react-router-dom";
 import NavBar from "./components/Navbar/";

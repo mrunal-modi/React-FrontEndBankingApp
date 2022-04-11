@@ -1,6 +1,6 @@
 import React from 'react';
 import BankForm from '../../components/BankForm';
-import UserContext from '../../utils/userContect';
+import UserContext from '../../utils/userContext';
 
 export default function Deposit() {
   const ctx = React.useContext(UserContext);
