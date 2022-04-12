@@ -1,4 +1,4 @@
-import UserContext from "./utils/userContext";
+import UserContext from "./utils/UserContext";
 
 import { BrowserRouter, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
@@ -28,7 +28,7 @@ function App() {
         >
           <div className="container" style={{ padding: "20px" }}>
               <Route path="/" exact component={Home} />
-              <Route path="/createAcccount/" component={CreateAccount} />
+              <Route path="/create-account/" component={CreateAccount} />
               <Route path="/deposit/" component={Deposit} />
               <Route path="/withdraw/" component={Withdraw} />
               <Route path="/alldata/" component={AllData} />

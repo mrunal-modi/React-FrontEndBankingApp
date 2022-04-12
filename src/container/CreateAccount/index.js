@@ -1,6 +1,6 @@
 import React from 'react';
 import BankForm from '../../components/BankForm';
-import UserContext from '../../utils/userContext';
+import UserContext from '../../utils/UserContext';
 
 export default function CreateAccount() {
   const ctx = React.useContext(UserContext);
