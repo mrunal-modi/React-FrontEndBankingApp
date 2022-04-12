@@ -1,13 +1,13 @@
 import UserContext from "./utils/userContext";
 
 import { BrowserRouter, Route } from "react-router-dom";
-import NavBar from "./components/Navbar/";
+import NavBar from "./components/NavBar";
 
-import Home from "./container/Home/home";
-import CreateAccount from "./container/CreateAccount/createaccount";
-import Deposit from "./container/Deposit/deposit";
-import Withdraw from "./container/Withdraw/withdraw";
-import AllData from "./container/AllData/alldata";
+import Home from "./container/Home";
+import CreateAccount from "./container/CreateAccount"
+import Deposit from "./container/Deposit";
+import Withdraw from "./container/Withdraw";
+import AllData from "./container/AllData";
 
 function App() {
   return (
@@ -28,7 +28,7 @@ function App() {
         >
           <div className="container" style={{ padding: "20px" }}>
               <Route path="/" exact component={Home} />
-              <Route path="/CreateAccount/" component={CreateAccount} />
+              <Route path="/createAcccount/" component={CreateAccount} />
               <Route path="/deposit/" component={Deposit} />
               <Route path="/withdraw/" component={Withdraw} />
               <Route path="/alldata/" component={AllData} />
