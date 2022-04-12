@@ -4,6 +4,7 @@ import UserContext from '../../utils/UserContext';
 
 export default function AllData(){
   const ctx = React.useContext(UserContext);
+  console.log(ctx);
   return (
     <Card
       txtcolor="black"

@@ -46,8 +46,9 @@ export default function BankForm(props) {
       setError (error);
       return;
     }
-
+    console.log(ctx);
     ctx.users.push({ name, email, password, balance: 100 });
+    console.log(ctx);
     setShow(false);
   }
 

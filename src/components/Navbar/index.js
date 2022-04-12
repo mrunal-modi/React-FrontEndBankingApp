@@ -1,4 +1,5 @@
 import BankImage from '../BankImage';
+import { Link } from 'react-router-dom';
 import './styles.css';
 
 export default function NavBar() {
@@ -6,9 +7,9 @@ export default function NavBar() {
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
-          <a className="navbar-brand" href="/">
+          <Link className="navbar-brand" to="/">
             <BankImage/>
-          </a>
+          </Link>
 
           <button
             className="navbar-toggler"
@@ -25,24 +26,24 @@ export default function NavBar() {
           <div className="collapse navbar-collapse" id="navbarText">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link" href="/create-account/">
+                <Link className="nav-link" to="/create-account/">
                   Create Account
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/Deposit/">
+                <Link className="nav-link" to="/Deposit/">
                   Deposit
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/withdraw/">
+                <Link className="nav-link" to="/withdraw/">
                   Withdraw
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/alldata/">
+                <Link className="nav-link" to="/alldata/">
                   All Data
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

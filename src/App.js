@@ -1,6 +1,6 @@
 import UserContext from "./utils/UserContext";
 
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import NavBar from "./components/NavBar";
 
 import Home from "./container/Home";
@@ -27,11 +27,13 @@ function App() {
           }}
         >
           <div className="container" style={{ padding: "20px" }}>
+            <Switch>
               <Route path="/" exact component={Home} />
-              <Route path="/create-account/" component={CreateAccount} />
+              <Route path="/create-account/" render={CreateAccount} />
               <Route path="/deposit/" component={Deposit} />
               <Route path="/withdraw/" component={Withdraw} />
               <Route path="/alldata/" component={AllData} />
+            </Switch>
           </div>
         </UserContext.Provider>
       </BrowserRouter>
