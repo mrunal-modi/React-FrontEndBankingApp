@@ -5,7 +5,9 @@ import UserContext from "../../Context";
 export default function Login() {
   const [error, setError] = React.useState(null);
   const ctx = React.useContext(UserContext);
+
   function handle(name, email, password) {
+    setError("");
     let user = ctx.users.find((el) => {
       return el.email == email;
     });

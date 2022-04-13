@@ -54,8 +54,13 @@ export default function BankForm(props) {
       return;
     }
     if (props.handleCreate) props.handleCreate(name, email, password);
-    else ctx.users.push({ name, email, password, balance: 0 });
-    setShow(false);
+    else {
+      let index = ctx.users.findIndex((el) => el.email == email);
+      if (index == -1) {
+        ctx.users.push({ name, email, password, balance: 0 });
+        setShow(false);
+      } else setError({ authError: "user with this email already exists!" });
+    }
   }
 
   function clearForm() {
@@ -74,6 +79,9 @@ export default function BankForm(props) {
         body={
           show ? (
             <>
+              {error && error.authError && (
+                <div className="alert alert-danger">{error.authError}</div>
+              )}
               {props.isName !== false && (
                 <>
                   Name
