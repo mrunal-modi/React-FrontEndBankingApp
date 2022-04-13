@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from '../../components/Card';
-import UserContext from '../../utils/UserContext';
+import UserContext from '../../Context';
 
 export default function AllData(){
   const ctx = React.useContext(UserContext);
