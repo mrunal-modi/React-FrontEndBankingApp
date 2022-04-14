@@ -1,7 +1,6 @@
 import React from "react";
 import Card from "../Card";
 import UserContext from "../../Context";
-// import {validate,sum,subtract} from '../../utils/Helper';
 
 export default function BankForm(props) {
   const [error, setError] = React.useState(null);

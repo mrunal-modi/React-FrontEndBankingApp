@@ -2,35 +2,42 @@ import React from "react";
 import BankForm from "../../components/BankForm";
 import UserContext from "../../Context";
 
-export default function Login() {
+export default function Login(props) {
   const [error, setError] = React.useState(null);
   const ctx = React.useContext(UserContext);
 
   function handle(name, email, password) {
     setError("");
-    let user = ctx.users.find((el) => {
+    let userId;
+    let user = ctx.users.find((el, i) => {
+      userId = i;
       return el.email == email;
     });
-    if (!user || (user && user.password != password)){
+    if (!user || (user && user.password != password)) {
       setError("Invalid Credentials");
-    } 
-    console.log(user);
+    }
+    console.log(userId, user);
+    ctx.loggedInUser = userId;
+    console.log(props);
+    if (userId == 0) {
+      props.history.push("/alldata/");
+    } else {
+      props.history.push("/deposit/");
+    }
+
     return true;
   }
 
   return (
     <div>
-      {
-        error && <div className="alert alert-danger">{error}</div>
-      }
+      {error && <div className="alert alert-danger">{error}</div>}
       <BankForm
-      isName={false}
-      bgcolor="warning"
-      label="Login"
-      submitButton="Login"
-      handleCreate={handle}
-    />
+        isName={false}
+        bgcolor="warning"
+        label="Login"
+        submitButton="Login"
+        handleCreate={handle}
+      />
     </div>
-    
   );
 }
