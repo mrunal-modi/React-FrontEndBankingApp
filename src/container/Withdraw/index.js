@@ -4,6 +4,21 @@ import UserContext from "../../Context";
 
 export default function Withdraw(props) {
   const [error, setError] = React.useState(null);
+  const [success, setSuccess] = React.useState(false);
+  const ctx = React.useContext(UserContext);
+
+  if (ctx.loggedInUser === undefined) {
+    return props.history.push("/login/");
+  }
+
+  function handleWithdraw(amount) {
+    if(ctx.users[ctx.loggedInUser].balance >= amount){
+      ctx.users[ctx.loggedInUser].balance = parseInt(ctx.users[ctx.loggedInUser].balance) - parseInt(amount);
+    console.log("Amount", amount)
+    setSuccess(!success);
+    } else setError("Insufficient Funds")
+    
+  }
 
   return (
     <div>
@@ -13,9 +28,8 @@ export default function Withdraw(props) {
         bgcolor="warning"
         label="Withdraw"
         submitButton="Withdraw"
-        // handleWithdraw={handle}
+        onSubmit={handleWithdraw}
       />
     </div>
   );
 }
-

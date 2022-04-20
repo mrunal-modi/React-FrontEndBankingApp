@@ -72,6 +72,7 @@ export default function BankForm(props) {
   return (
     <div>
       <Card
+        hideCurrentUser={props.hideCurrentUser}
         bgcolor={props.bgcolor}
         header={props.label}
         status={status}

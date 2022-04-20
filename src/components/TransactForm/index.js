@@ -1,33 +1,30 @@
 import React from "react";
 import Balance from "../../components/Balance";
-import Card from "../Card";
-import UserContext from "../../Context";
+import Card from "../Card/";
 
 export default function TransactForm(props) {
   const [error, setError] = React.useState(null);
-  const [show, setShow] = React.useState(true);
-  const [status, setStatus] = React.useState("");
-  const [name, setName] = React.useState("");
-  const [email, setEmail] = React.useState("");
   const [amount, setAmount] = React.useState("");
-  const ctx = React.useContext(UserContext);
 
   function validate(label, value) {
     if (!value) {
       return "Error: " + label + " is required";
     }
+    console.log(value, typeof value, value <= 1000)
     if (
       label.toLowerCase() === "amount" &&
-      !/^[0-9]+$/i.test(value) &&
-      value.length >= 1 &&
-      value.length <= 1000
+      !/^[0-9]+$/.test(value) &&
+      value >= 1 &&
+      value <= 1000
     ) {
+      console.log(value, typeof value, value <= 1000)
       return "Error: Amount should be between 1 and 1000";
     }
     return true;
   }
 
   function handleDeposit() {
+    setError("");
     let error = {};
     let inputs = { Amount: amount };
 
@@ -43,14 +40,9 @@ export default function TransactForm(props) {
       setError(error);
       return;
     }
-    if (props.handleCreate) props.handleDeposit(name, email, amount);
-    else {
-      let index = ctx.users.findIndex((el) => el.email == email);
-      if (index == -1) {
-        ctx.users.push({ name, email, amount, balance: 0 });
-        setShow(false);
-      } else setError({ authError: "user with this email already exists!" });
-    }
+
+    (props.onSubmit && typeof props.onSubmit === "function") && props.onSubmit(amount)
+
   }
 
   return (
@@ -58,7 +50,6 @@ export default function TransactForm(props) {
       <Card
         bgcolor={props.bgcolor}
         header={props.label}
-        status={status}
         body={
 
             <>
@@ -67,7 +58,7 @@ export default function TransactForm(props) {
               )}
 
               <div>
-              Balance <Balance/>
+              <Balance/>
               </div>
               
               <br />

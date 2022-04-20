@@ -4,6 +4,18 @@ import UserContext from "../../Context";
 
 export default function Deposit(props) {
   const [error, setError] = React.useState(null);
+  const [success, setSuccess] = React.useState(false);
+  const ctx = React.useContext(UserContext);
+
+  if (ctx.loggedInUser === undefined) {
+    return props.history.push("/login/");
+  }
+
+  function handleDeposit(amount) {
+    ctx.users[ctx.loggedInUser].balance = parseInt(ctx.users[ctx.loggedInUser].balance) + parseInt(amount);
+    console.log("Amount", amount)
+    setSuccess(!success);
+  }
 
   return (
     <div>
@@ -13,32 +25,8 @@ export default function Deposit(props) {
         bgcolor="warning"
         label="Deposit"
         submitButton="Deposit"
-        // handleDeposit={handle}
+        onSubmit={handleDeposit}
       />
     </div>
   );
 }
-
-
-
-// Container component => Deposit (Jsx)
-// function Deposit{
-//   <TransactionComponent />
-// }
-
-// Transaction component => Transaction will user Balance Component and allow SUM with new Amount
-// function TransactionComponent{
-//   handle = {
-//       on the bases of input value update balance of current logged in user
-//   }
-//   <Card
-//       title={props.title}
-//       body={
-//           <>
-//           <BalanceComponent />
-//           <input />
-//           <submitButton onClick={handle}/>
-//           </>
-//       }
-//   >
-// }

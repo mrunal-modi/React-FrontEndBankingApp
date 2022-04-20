@@ -6,6 +6,7 @@ export default function CreateAccount() {
       <BankForm
       bgcolor="warning"
       label="Create Account"   
+      hideCurrentUser={true}
       successButton="Add another account"
       />
   )

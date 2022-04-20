@@ -1,5 +1,6 @@
 import BankImage from '../BankImage';
 import { Link } from 'react-router-dom';
+import RenderContacts from '../RenderContacts';
 import './styles.css';
 
 export default function NavBar() {
@@ -50,6 +51,9 @@ export default function NavBar() {
                   All Data
                 </Link>
               </li>
+
+              <RenderContacts/>
+              
             </ul>
           </div>
         </div>

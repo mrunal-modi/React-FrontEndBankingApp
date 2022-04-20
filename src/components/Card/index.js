@@ -1,4 +1,5 @@
 import React from 'react';
+import CurrentUser from '../CurrentUser';
 
 
 function Card(props) {
@@ -10,7 +11,7 @@ function Card(props) {
   
     return (
       <div className={classes()} style={{ maxWidth: props.maxWidth || "18rem" }}>
-        <div className="card-header">{props.header}</div>
+        <div className="card-header">{props.header} {!props.hideCurrentUser && <CurrentUser/>}</div>
         <div className="card-body">
           {props.title && <h5 className="card-title">{props.title}</h5>}
           {props.text && <p className="card-text">{props.text}</p>}

@@ -6,15 +6,17 @@ export default function Table(props) {
   return (
     <table className="table table-striped">
       <thead>
-        {header.map((el, i) => (
-          <th>{el}</th>
-        ))}
+        <tr>
+          {header.map((el, i) => (
+            <th key={"th" + i}>{el}</th>
+          ))}
+        </tr>
       </thead>
       <tbody>
         {rows.map((row, i) => (
-          <tr>
+          <tr key={"tr" + i}>
             {row.map((value, i) => (
-              <td>{value}</td>
+              <td key={"td" + i}>{value}</td>
             ))}
           </tr>
         ))}
