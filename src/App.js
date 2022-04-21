@@ -1,7 +1,7 @@
 import { Route } from "react-router-dom";
 
 import UserContext from "./Context";
-import NavBar from "./components/NavBar/NavBar";
+import NavBar from "./container/NavBar/NavBar";
 
 import Home from "./container/Home/Home";
 import CreateAccount from "./container/CreateAccount/CreateAccount"
