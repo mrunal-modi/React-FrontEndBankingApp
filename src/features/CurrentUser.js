@@ -1,5 +1,5 @@
 import React from "react";
-import {useCurrentUser} from "../Context";
+import {useCurrentUser} from "./Context";
 
 export default function CurrentUser() {
   const user = useCurrentUser();
