@@ -1,5 +1,5 @@
 import React from 'react';
-import CurrentUser from '../CurrentUser';
+import CurrentUser from '../../features/CurrentUser';
 
 
 function Card(props) {

@@ -1,8 +1,8 @@
 import React from "react";
-import Card from "../../components/Card";
-import BankImage from "../../components/BankImage";
-import CurrentUser from "../../components/CurrentUser";
-import "./styles.css";
+import Card from "../../components/Card/Card";
+import BankImage from "../../components/Icons/BankImage";
+import CurrentUser from "../../features/CurrentUser";
+import "./Home.css";
 
 export default function Home() {
   return (

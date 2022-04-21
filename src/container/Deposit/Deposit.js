@@ -1,5 +1,5 @@
 import React from "react";
-import TransactForm from "../../components/TransactForm";
+import TransactForm from "../../forms/TransactForm";
 import UserContext from "../../Context";
 
 export default function Deposit(props) {

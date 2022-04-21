@@ -1,5 +1,5 @@
 import React from 'react';
-import BankForm from '../../components/BankForm';
+import BankForm from "../../forms/BankForm";
 
 export default function CreateAccount() {
   return (

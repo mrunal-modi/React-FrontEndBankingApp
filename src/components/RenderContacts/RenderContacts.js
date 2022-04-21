@@ -1,5 +1,5 @@
-import contacts from "../../assets/contacts_data";
-import "./styles.css"
+import contacts from "../../assets/contactData";
+import "./RenderContacts.css"
 
 export default function RenderContacts() {
   let user = contacts.users.find((el) => el.userId === 1);

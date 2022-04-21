@@ -1,8 +1,8 @@
 import React from 'react';
-import Card from '../../components/Card';
+import Card from '../../components/Card/Card';
 import UserContext from '../../Context';
-import Table from "../../components/Table";
-import './styles.css';
+import Table from "../../components/Table/Table";
+import './AllData.css';
 
 export default function AllData(){
   const ctx = React.useContext(UserContext);

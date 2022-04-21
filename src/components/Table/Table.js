@@ -1,5 +1,5 @@
 import React from "react";
-import "./styles.css";
+import "./Table.css";
 
 export default function Table(props) {
   const { header, rows } = props;

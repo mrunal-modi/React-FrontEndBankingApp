@@ -1,7 +1,7 @@
-import BankImage from '../BankImage';
+import BankImage from '../Icons/BankImage';
 import { Link } from 'react-router-dom';
-import RenderContacts from '../RenderContacts';
-import './styles.css';
+import RenderContacts from '../RenderContacts/RenderContacts';
+import './NavBar.css';
 
 export default function NavBar() {
   return (

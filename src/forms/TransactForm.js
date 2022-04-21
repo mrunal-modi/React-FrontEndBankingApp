@@ -1,6 +1,6 @@
 import React from "react";
-import Balance from "../../components/Balance";
-import Card from "../Card/";
+import Balance from "../features/Balance";
+import Card from "../components/Card/Card";
 
 export default function TransactForm(props) {
   const [error, setError] = React.useState(null);

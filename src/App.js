@@ -1,14 +1,14 @@
 import { Route } from "react-router-dom";
 
 import UserContext from "./Context";
-import NavBar from "./components/NavBar";
+import NavBar from "./components/NavBar/NavBar";
 
-import Home from "./container/Home";
-import CreateAccount from "./container/CreateAccount"
-import Login from "./container/Login";
-import Deposit from "./container/Deposit";
-import Withdraw from "./container/Withdraw";
-import AllData from "./container/AllData";
+import Home from "./container/Home/Home";
+import CreateAccount from "./container/CreateAccount/CreateAccount"
+import Login from "./container/Login/Login";
+import Deposit from "./container/Deposit/Deposit";
+import Withdraw from "./container/Withdraw/Withdraw";
+import AllData from "./container/AllData/AllData";
 
 function App() {
   return (

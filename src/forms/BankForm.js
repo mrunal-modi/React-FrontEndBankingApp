@@ -1,6 +1,6 @@
 import React from "react";
-import Card from "../Card";
-import UserContext from "../../Context";
+import Card from "../components/Card/Card";
+import UserContext from "../Context";
 
 export default function BankForm(props) {
   const [error, setError] = React.useState(null);
