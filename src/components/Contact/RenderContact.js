@@ -1,8 +1,7 @@
-import contacts from "../../assets/contactData";
-import "./RenderContacts.css"
+import contact from "./contactData";
 
-export default function RenderContacts() {
-  let user = contacts.users.find((el) => el.userId === 1);
+export default function RenderContact() {
+  let user = contact.users.find((el) => el.userId === 1);
   return (
     <>
       <li className="nav-item">

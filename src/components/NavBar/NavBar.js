@@ -1,6 +1,6 @@
 import BankImage from '../Icons/BankImage';
 import { Link } from 'react-router-dom';
-import RenderContacts from '../RenderContacts/RenderContacts';
+import RenderContacts from '../Contact/RenderContact';
 import './NavBar.css';
 
 export default function NavBar() {

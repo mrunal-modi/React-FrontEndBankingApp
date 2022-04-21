@@ -1,4 +1,4 @@
-const contacts = {
+const contact = {
     "users": [
       {
         "userId": 1,
@@ -39,4 +39,4 @@ const contacts = {
     ]
   }
   
-  export default contacts;
+  export default contact;
