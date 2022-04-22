@@ -10,7 +10,7 @@ function Card(props) {
     }
   
     return (
-      <div className={classes()} style={{ maxWidth: props.maxWidth || "18rem" }}>
+      <div className={classes()} style={{ maxWidth: props.maxWidth || "100%" }}>
         <div className="card-header">{props.header} {!props.hideCurrentUser && <CurrentUser/>}</div>
         <div className="card-body">
           {props.title && <h5 className="card-title">{props.title}</h5>}

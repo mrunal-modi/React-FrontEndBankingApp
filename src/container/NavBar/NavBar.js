@@ -1,7 +1,6 @@
 import BankImage from "../../components/Icons/BankImage";
 import { Link } from "react-router-dom";
-import RenderContacts from "../../components/Contact/RenderContact";
-import Logout from "../../features/Logout";
+// import RenderContacts from "../../components/Contact/RenderContact";
 import "./NavBar.css";
 
 export default function NavBar() {
@@ -54,15 +53,11 @@ export default function NavBar() {
               </li>
 
               <li className="nav-item">
-                <button
-                  type="submit"
-                  className="btn btn-light"
-                  onClick={Logout}
-                >
-                  <i class="bi bi-box-arrow-in-right"></i>
-                </button>
+                <Link className="nav-link" to="/logout/">
+                  <i className="bi bi-box-arrow-in-right"></i>
+                </Link>
               </li>
-              <RenderContacts />
+              {/* <RenderContacts /> */}
             </ul>
           </div>
         </div>

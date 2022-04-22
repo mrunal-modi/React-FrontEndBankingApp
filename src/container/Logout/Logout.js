@@ -1,12 +1,11 @@
 import React from "react";
-import Card from "../components/Card/Card";
-import UserContext from "../features/Context";
-import CurrentUser from "./CurrentUser";
+import Card from "../../components/Card/Card";
+import UserContext from "../../features/Context";
+import CurrentUser from "../../features/CurrentUser";
 
 export default function Logout(props) {
   const ctx = React.useContext(UserContext);
-  console.log(ctx.loggedInUser);
-  ctx.loggedInUser = undefined;
+  ctx.loggedInUser = undefined; // Reset LoggedIn
   console.log(ctx.loggedInUser);
   return (
     <div className="logout">

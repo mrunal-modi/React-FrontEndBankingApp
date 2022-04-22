@@ -9,6 +9,7 @@ import Login from "./container/Login/Login";
 import Deposit from "./container/Deposit/Deposit";
 import Withdraw from "./container/Withdraw/Withdraw";
 import AllData from "./container/AllData/AllData";
+import Logout from "./container/Logout/Logout";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
               <Route path="/deposit/" component={Deposit} />
               <Route path="/withdraw/" component={Withdraw} />
               <Route path="/alldata/" component={AllData} />
+              <Route path="/logout/" component={Logout} />
           </div>
         </UserContext.Provider>
     </div>

@@ -6,13 +6,13 @@ export default function RenderContact() {
   return (
     <>
       <li className="nav-item">
-        <a href={"mailto:'" + user.emailAddress + "'"}>
+        <a className="nav-link" href={"mailto:'" + user.emailAddress + "'"}>
           <i className="bi bi-envelope"></i>
         </a>
       </li>
       <li className="nav-item">
-        <a href={user.github_url}>
-          <i class="bi bi-github"></i>
+        <a className="nav-link" href={user.github_url}>
+          <i className="bi bi-github"></i>
         </a>
       </li>
     </>
