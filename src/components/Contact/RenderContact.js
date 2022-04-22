@@ -12,7 +12,7 @@ export default function RenderContact() {
       </li>
       <li className="nav-item">
         <a href={user.github_url}>
-          <i className="bi bi-github"></i>
+          <i class="bi bi-github"></i>
         </a>
       </li>
     </>

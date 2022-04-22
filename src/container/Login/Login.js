@@ -19,11 +19,11 @@ export default function Login(props) {
     console.log(userId, user);
     ctx.loggedInUser = userId;
     console.log(props);
-    if (userId == 0) {
-      props.history.push("/alldata/");
-    } else {
-      props.history.push("/deposit/");
-    }
+    // if (userId == 0) {
+    //   props.history.push("/alldata/");
+    // } else {
+    //   props.history.push("/deposit/");
+    // }
 
     return true;
   }

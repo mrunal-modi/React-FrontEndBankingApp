@@ -1,7 +1,8 @@
-import BankImage from "../../components/Icons/BankImage" 
-import { Link } from 'react-router-dom';
-import RenderContacts from '../../components/Contact/RenderContact';
-import './NavBar.css';
+import BankImage from "../../components/Icons/BankImage";
+import { Link } from "react-router-dom";
+import RenderContacts from "../../components/Contact/RenderContact";
+import Logout from "../../features/Logout";
+import "./NavBar.css";
 
 export default function NavBar() {
   return (
@@ -9,7 +10,7 @@ export default function NavBar() {
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
-            <BankImage/>
+            <BankImage />
           </Link>
 
           <button
@@ -52,8 +53,16 @@ export default function NavBar() {
                 </Link>
               </li>
 
-              <RenderContacts/>
-              
+              <li className="nav-item">
+                <button
+                  type="submit"
+                  className="btn btn-light"
+                  onClick={Logout}
+                >
+                  <i class="bi bi-box-arrow-in-right"></i>
+                </button>
+              </li>
+              <RenderContacts />
             </ul>
           </div>
         </div>
