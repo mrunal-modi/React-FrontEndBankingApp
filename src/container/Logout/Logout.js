@@ -1,18 +1,25 @@
-import React from "react";
+import React, { useContext, useEffect } from 'react';
 import Card from "../../components/Card/Card";
 import UserContext from "../../features/Context";
 import CurrentUser from "../../features/CurrentUser";
 
 export default function Logout(props) {
-  const ctx = React.useContext(UserContext);
-  ctx.loggedInUser = undefined; // Reset LoggedIn
+  const ctx = useContext(UserContext);
+  useEffect(() => {
+    if (ctx.loggedInUser !== undefined)
+    {
+      ctx.loggedInUser = undefined; // Reset LoggedIn
+    }
+  });
+   
   console.log(ctx.loggedInUser);
   return (
     <div className="logout">
-      <Card
-        txtcolor="black"
-        header={<div> Logged out <CurrentUser/> </div>}
-      />
+      <Card bgcolor="warning" header={<div> Log out </div>}>
+        <h5>
+          Successfully Logged Out <CurrentUser />
+        </h5>
+      </Card>
     </div>
   );
 }

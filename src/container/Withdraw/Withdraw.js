@@ -3,13 +3,14 @@ import TransactForm from "../../forms/TransactForm";
 import UserContext from "../../features/Context";
 
 export default function Withdraw(props) {
-  const [error, setError] = React.useState(null);
-  const [success, setSuccess] = React.useState(false);
   const ctx = React.useContext(UserContext);
+  const [error, setError] = React.useState(ctx.loggedInUser === undefined? ("User not logged In"): null);
+  const [success, setSuccess] = React.useState(false);
 
-  if (ctx.loggedInUser === undefined) {
-    return props.history.push("/login/");
-  }
+
+  // if (ctx.loggedInUser === undefined) {
+  //   return props.history.push("/login/");
+  // }
 
   function handleWithdraw(amount) {
     if(ctx.users[ctx.loggedInUser].balance >= amount){
@@ -23,13 +24,17 @@ export default function Withdraw(props) {
   return (
     <div>
       {error && <div className="alert alert-danger">{error}</div>}
-      <TransactForm
+      {
+        ctx.loggedInUser !== undefined && 
+        <TransactForm
         isName={false}
         bgcolor="warning"
         label="Withdraw"
         submitButton="Withdraw"
         onSubmit={handleWithdraw}
       />
+      }
+
     </div>
   );
 }

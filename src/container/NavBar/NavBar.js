@@ -1,5 +1,6 @@
 import BankImage from "../../components/Icons/BankImage";
 import { Link } from "react-router-dom";
+import CurrentUser from "../../features/CurrentUser";
 // import RenderContacts from "../../components/Contact/RenderContact";
 import "./NavBar.css";
 

@@ -1,12 +1,15 @@
 import React from "react";
 import BankForm from "../../forms/BankForm";
+import Card from "../../components/Card/Card";
 import UserContext from "../../features/Context";
+import CurrentUser from "../../features/CurrentUser";
 
 export default function Login(props) {
-  const [error, setError] = React.useState(null);
   const ctx = React.useContext(UserContext);
+  const [error, setError] = React.useState(null);
+  const [success, setSuccess] = React.useState(ctx.loggedInUser !== undefined);
 
-  function handle(name, email, password) {
+  function handleSubmit(name, email, password) {
     setError("");
     let userId;
     let user = ctx.users.find((el, i) => {
@@ -18,26 +21,28 @@ export default function Login(props) {
     }
     console.log(userId, user);
     ctx.loggedInUser = userId;
-    console.log(props);
+    setSuccess(true)
     // if (userId == 0) {
     //   props.history.push("/alldata/");
     // } else {
     //   props.history.push("/deposit/");
     // }
-
     return true;
   }
 
+  function clearForm() {
+    setSuccess(false);
+  }
+
   return (
-    <div>
-      {error && <div className="alert alert-danger">{error}</div>}
-      <BankForm
-        isName={false}
-        bgcolor="warning"
-        label="Login"
-        submitButton="Login"
-        handleCreate={handle}
-      />
-    </div>
+    <Card bgcolor="warning" header="Login" hideCurrentUser={true}>
+      {success ? (
+        <>
+          <h5>Successfully Logged In <CurrentUser/></h5>
+        </>
+      ) : (
+        <BankForm onSubmit={handleSubmit} isName={false}/>
+      )}
+    </Card>
   );
 }
