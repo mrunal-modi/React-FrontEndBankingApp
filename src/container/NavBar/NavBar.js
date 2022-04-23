@@ -1,10 +1,10 @@
 import BankImage from "../../components/Icons/BankImage";
 import { Link } from "react-router-dom";
 import CurrentUser from "../../features/CurrentUser";
-// import RenderContacts from "../../components/Contact/RenderContact";
 import "./NavBar.css";
 
 export default function NavBar() {
+  console.log("NavBar")
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -58,7 +58,9 @@ export default function NavBar() {
                   <i className="bi bi-box-arrow-in-right"></i>
                 </Link>
               </li>
-              {/* <RenderContacts /> */}
+              <li>
+              <CurrentUser/>
+              </li>
             </ul>
           </div>
         </div>

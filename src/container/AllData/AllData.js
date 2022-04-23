@@ -3,6 +3,7 @@ import Card from "../../components/Card/Card";
 import UserContext from "../../features/Context";
 import Table from "../../components/Table/Table";
 import "./AllData.css";
+import RenderContent from "../../components/Content/RenderContent";
 
 export default function AllData() {
   const ctx = React.useContext(UserContext);
@@ -26,7 +27,7 @@ export default function AllData() {
           <Card
             maxWidth="100%"
             txtcolor="black"
-            header="All Data > Login using admin@admin.edu | secret"
+            header="All Data"
             title="Admin Access"
             body={
               ctx.loggedInUser === 0 ? (
@@ -39,8 +40,7 @@ export default function AllData() {
           />
         </div>
         <div className="col-sm-4">
-          <h1>Instructions</h1>
-          <p>lorem ipsum</p>
+        <RenderContent instruction_type="AllData"/>
         </div>
       </div>
     </div>

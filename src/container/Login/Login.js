@@ -3,6 +3,7 @@ import BankForm from "../../forms/BankForm";
 import Card from "../../components/Card/Card";
 import UserContext from "../../features/Context";
 import CurrentUser from "../../features/CurrentUser";
+import RenderContent from "../../components/Content/RenderContent";
 
 export default function Login(props) {
   const ctx = React.useContext(UserContext);
@@ -52,8 +53,7 @@ export default function Login(props) {
         </div>
 
         <div className="col-sm-4">
-          <h1>Instructions</h1>
-          <p>lorem ipsum</p>
+        <RenderContent instruction_type="Login"/>
         </div>
       </div>
     </div>

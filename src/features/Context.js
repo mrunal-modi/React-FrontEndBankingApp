@@ -6,8 +6,9 @@ export default UserContext;
 // Custom Hook is a function that starts with use..
 export function useCurrentUser() {
   const ctx = React.useContext(UserContext);
+  console.log(ctx);
 
-  let userId = ctx.loggedInUser;
+  let userId = ctx?.loggedInUser;
   if (userId == undefined)
   return null;
 

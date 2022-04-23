@@ -2,6 +2,7 @@ import React from "react";
 import Card from "../../components/Card/Card";
 import BankImage from "../../components/Icons/BankImage";
 import CurrentUser from "../../features/CurrentUser";
+import RenderContent from "../../components/Content/RenderContent";
 import "./Home.css";
 
 export default function Home() {
@@ -23,8 +24,7 @@ export default function Home() {
         </div>
 
         <div className="col-sm-4">
-          <h1>Instructions</h1>
-          <p>lorem ipsum</p>
+          <RenderContent instruction_type="Home"/>
         </div>
 
       </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import TransactForm from "../../forms/TransactForm";
 import UserContext from "../../features/Context";
+import RenderContent from "../../components/Content/RenderContent";
 
 export default function Deposit(props) {
   const ctx = React.useContext(UserContext);
@@ -35,8 +36,7 @@ export default function Deposit(props) {
     </div>
 
     <div className="col-sm-4">
-      <h1>Instructions</h1>
-      <p>lorem ipsum</p>
+    <RenderContent instruction_type="Deposit"/>
     </div>
   </div>
 </div>
