@@ -19,18 +19,27 @@ export default function Deposit(props) {
   }
 
   return (
-    <div>
+<div className="deposit container">
+  <div className="row">
+    <div className="col-sm-8">
       {error && <div className="alert alert-danger">{error}</div>}
-      {
-        ctx.loggedInUser !== undefined && 
+      {ctx.loggedInUser !== undefined && (
         <TransactForm
-        isName={false}
-        bgcolor="warning"
-        label="Deposit"
-        submitButton="Deposit"
-        onSubmit={handleDeposit}
-      />
-      }
+          isName={false}
+          bgcolor="warning"
+          label="Deposit"
+          submitButton="Deposit"
+          onSubmit={handleDeposit}
+        />
+      )}
     </div>
+
+    <div className="col-sm-4">
+      <h1>Instructions</h1>
+      <p>lorem ipsum</p>
+    </div>
+  </div>
+</div>
+
   );
 }
