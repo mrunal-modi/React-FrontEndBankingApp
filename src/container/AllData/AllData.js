@@ -12,7 +12,7 @@ export default function AllData() {
   let header = [];
   let rows = [];
 
-  if (ctx.loggedInUser == 0) {
+  if (ctx.loggedInUser === 0) {
     header = ["Email", "Name", "Password", "Balance"];
     rows = ctx.users.map((el) => {
       return [el.email, el.name, el.password, el.balance];
@@ -29,7 +29,7 @@ export default function AllData() {
             header="All Data > Login using admin@admin.edu | secret"
             title="Admin Access"
             body={
-              ctx.loggedInUser == 0 ? (
+              ctx.loggedInUser === 0 ? (
                 <Table header={header} rows={rows} />
               ) : (
                 "Access Denied"

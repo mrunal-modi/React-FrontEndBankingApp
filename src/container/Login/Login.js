@@ -14,14 +14,14 @@ export default function Login(props) {
     let userId;
     let user = ctx.users.find((el, i) => {
       userId = i;
-      return el.email == email;
+      return el.email === email;
     });
-    if (!user || (user && user.password != password)) {
+    if (!user || (user && user.password !== password)) {
       setError("Invalid Credentials");
     }
     console.log(userId, user);
     ctx.loggedInUser = userId;
-    setSuccess(true)
+    setSuccess(true);
     // if (userId == 0) {
     //   props.history.push("/alldata/");
     // } else {
@@ -30,19 +30,32 @@ export default function Login(props) {
     return true;
   }
 
-  function clearForm() {
-    setSuccess(false);
-  }
+  // function clearForm() {
+  //   setSuccess(false);
+  // }
 
   return (
-    <Card bgcolor="warning" header="Login" hideCurrentUser={true}>
-      {success ? (
-        <>
-          <h5>Successfully Logged In <CurrentUser/></h5>
-        </>
-      ) : (
-        <BankForm onSubmit={handleSubmit} isName={false}/>
-      )}
-    </Card>
+    <div className="login container">
+      <div className="row">
+        <div className="col-sm-8">
+          <Card bgcolor="warning" header="Login" hideCurrentUser={true}>
+            {success ? (
+              <>
+                <h5>
+                  Successfully Logged In <CurrentUser />
+                </h5>
+              </>
+            ) : (
+              <BankForm onSubmit={handleSubmit} isName={false} />
+            )}
+          </Card>
+        </div>
+
+        <div className="col-sm-4">
+          <h1>Instructions</h1>
+          <p>lorem ipsum</p>
+        </div>
+      </div>
+    </div>
   );
 }
