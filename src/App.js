@@ -10,9 +10,11 @@ import Deposit from "./container/Deposit/Deposit";
 import Withdraw from "./container/Withdraw/Withdraw";
 import AllData from "./container/AllData/AllData";
 import Logout from "./container/Logout/Logout";
+import { useState } from "react";
 import Footer from "./container/Footer";
 
 function App() {
+  const [loggedInUser, setLoggedInUser] = useState();
   return (
     <div className="App">
       <UserContext.Provider
@@ -25,19 +27,20 @@ function App() {
               balance: 100,
             },
           ],
+          loggedInUser: loggedInUser
         }}
       >
-        <NavBar />
+        <NavBar loggedInUser={loggedInUser}/>
         <div className="container" style={{ padding: "20px" }}>
           <Route path="/" exact component={Home} />
           <Route path="/create-account/" component={CreateAccount} />
-          <Route path="/login/" component={Login} />
+          <Route path="/login/" component={(p) => <Login {...p} setLoggedInUser={setLoggedInUser}/>}/>
           <Route path="/deposit/" component={Deposit} />
           <Route path="/withdraw/" component={Withdraw} />
           <Route path="/alldata/" component={AllData} />
-          <Route path="/logout/" component={Logout} />
+          <Route path="/logout/" component={(p) => <Logout {...p} setLoggedInUser={setLoggedInUser} loggedInUser={loggedInUser}/>} />
         </div>
-        <Footer/>
+        <Footer />
       </UserContext.Provider>
     </div>
   );

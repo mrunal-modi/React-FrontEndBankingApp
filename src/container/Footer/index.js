@@ -5,7 +5,7 @@ import "./style.css";
 
 const Footer = props => {
     return (
-        <footer className="footer">
+        <footer class="footer">
             <nav className="navbar navbar-expand-lg">
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                     <RenderContact />

@@ -21,7 +21,8 @@ export default function Login(props) {
       setError("Invalid Credentials");
     }
     console.log(userId, user);
-    ctx.loggedInUser = userId;
+    // ctx.loggedInUser = userId;
+    props.setLoggedInUser(userId);
     setSuccess(true);
     // if (userId == 0) {
     //   props.history.push("/alldata/");
