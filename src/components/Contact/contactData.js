@@ -9,14 +9,7 @@ const contact = {
         "lastName": "Modi",
         "gender": "Male",
         "age": 21,
-        "address": {
-            "streetAddress": "Glen Iris",
-            "city": "Melbourne",
-            "state": "VIC",
-            "postalCode": "3146"
-        },
-        "emailAddress": "mrunal.modi@gmail.com",
-        "phoneNumbers": [{ "type": "mobile", "number": "61888888888" }]
+        "emailAddress": "mrunal.modi@gmail.com"
       },
       {
         "userId": 2,
@@ -27,14 +20,7 @@ const contact = {
         "lastName": "",
         "gender": "Neutral",
         "age": 0,
-        "address": {
-            "streetAddress": "Glen Iris",
-            "city": "Melbourne",
-            "state": "VIC",
-            "postalCode": "3146"
-        },
-        "emailAddress": "admin@arewein.com",
-        "phoneNumbers": [{ "type": "mobile", "number": "61888888888" }]
+        "emailAddress": "admin@arewein.com"
       }
     ]
   }
