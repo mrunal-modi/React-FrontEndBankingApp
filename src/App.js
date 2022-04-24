@@ -10,6 +10,7 @@ import Deposit from "./container/Deposit/Deposit";
 import Withdraw from "./container/Withdraw/Withdraw";
 import AllData from "./container/AllData/AllData";
 import Logout from "./container/Logout/Logout";
+import Footer from "./container/Footer";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
           <Route path="/alldata/" component={AllData} />
           <Route path="/logout/" component={Logout} />
         </div>
+        <Footer/>
       </UserContext.Provider>
     </div>
   );

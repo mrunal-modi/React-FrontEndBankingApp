@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 import CurrentUser from "../../features/CurrentUser";
 import "./NavBar.css";
 
-export default function NavBar() {
-  console.log("NavBar")
+export default function NavBar(props) {
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -52,15 +51,18 @@ export default function NavBar() {
                   All Data
                 </Link>
               </li>
-
-              <li className="nav-item">
-                <Link className="nav-link" to="/logout/">
-                  <i className="bi bi-box-arrow-in-right"></i>
-                </Link>
-              </li>
-              <li>
-              <CurrentUser/>
-              </li>
+              {props.loggedInUser !== undefined &&
+                <>
+                  <li className="nav-item">
+                    <CurrentUser className="nav-link" />
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/logout/">
+                      <i className="bi bi-box-arrow-in-right"></i>
+                    </Link>
+                  </li>
+                </>
+              }
             </ul>
           </div>
         </div>
