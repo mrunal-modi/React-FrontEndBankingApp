@@ -15,25 +15,32 @@ import Footer from "./container/Footer";
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState();
+  const [users, setUsers] = useState([
+    {
+      name: "admin",
+      email: "admin@admin.edu",
+      password: "secret",
+      balance: 100,
+    },
+  ]);
+
+  const createUser = (user) => {
+    setUsers([...users,user]);
+  }
+
   return (
     <div className="App">
       <UserContext.Provider
         value={{
-          users: [
-            {
-              name: "admin",
-              email: "admin@admin.edu",
-              password: "secret",
-              balance: 100,
-            },
-          ],
+          users: users,
           loggedInUser: loggedInUser
         }}
       >
         <NavBar loggedInUser={loggedInUser}/>
         <div className="container" style={{ padding: "20px" }}>
           <Route path="/" exact component={Home} />
-          <Route path="/create-account/" component={CreateAccount} />
+          {/* <Route path="/create-account/" component={CreateAccount} /> */}
+          <Route path="/create-account/" component={(p) => <CreateAccount {...p} createUser={createUser}/>}/> 
           <Route path="/login/" component={(p) => <Login {...p} setLoggedInUser={setLoggedInUser}/>}/>
           <Route path="/deposit/" component={Deposit} />
           <Route path="/withdraw/" component={Withdraw} />

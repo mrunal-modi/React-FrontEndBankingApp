@@ -9,9 +9,8 @@ export function useCurrentUser() {
   console.log(ctx);
 
   let userId = ctx?.loggedInUser;
-  if (userId == undefined)
+  if (userId === undefined)
   return null;
-
   let user = ctx.users[userId];
   return user;
 }

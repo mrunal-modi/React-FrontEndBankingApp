@@ -4,7 +4,7 @@ import Card from "../../components/Card/Card";
 import UserContext from "../../features/Context";
 import RenderContent from "../../components/Content/RenderContent";
 
-export default function CreateAccount() {
+export default function CreateAccount(props) {
   const ctx = React.useContext(UserContext);
   const [error, setError] = React.useState(null);
   const [success, setSuccess] = React.useState(false);
@@ -12,7 +12,8 @@ export default function CreateAccount() {
   function handleSubmit(name, email, password) {
     let index = ctx.users.findIndex((el) => el.email === email);
     if (index === -1) {
-      ctx.users.push({ name, email, password, balance: 0 });
+      // ctx.users.push({ name, email, password, balance: 0 });
+      props.createUser({ name, email, password, balance: 0 });
       setSuccess(true);
     } else setError({ authError: "user with this email already exists!" });
   }
